@@ -55,7 +55,7 @@ class DummyClient(WebSocketClient):
     def received_message(self, m):
         source = m.data.decode("utf-8")
         n = json.loads(source)
-        
+
         print "\nAccount:", n["account"]
         print "Direction:", n["order"]["direction"]
         print "Original Quantity:", n["order"]["originalQty"]
@@ -68,12 +68,11 @@ class DummyClient(WebSocketClient):
         else:
             id.to_check = n["standingId"]
         print "Other party's id:", id.to_check
-        
-        #if len(m) == 175:
+
         self.close(reason='Bye bye')
 
-for i in range(1,400):
-    if __name__ == '__main__':
+if __name__ == '__main__':
+    for i in range(1,400):
         try:
             ws = DummyClient(urlws, protocols=['http-only', 'chat'])
             ws.connect()
@@ -81,26 +80,28 @@ for i in range(1,400):
         except KeyboardInterrupt:
             ws.close()
 
-    time.sleep(1)
-    cancel_text = cancel_order(id.to_check)
-    print "\n"
-    unedited = cancel_text["error"][-12:-1]
-    if unedited[2] == " ":
-        account = unedited[3:]
-    elif unedited[1] == " ":
-        account = unedited[2:]
-    elif unedited[0] == " ":
-        account = unedited[1:]
-    else:
-        account = unedited
-    print account
-    if account not in all_accounts:
-        all_accounts.append(account)
-        uaccount = account.encode("utf-8")
-        args = [dirpath, uaccount]
-        subprocess.Popen([sys.executable,  args],\
-                         creationflags = subprocess.CREATE_NEW_CONSOLE)
+        time.sleep(1)
+        cancel_text = cancel_order(id.to_check)
+        print "\n"
+        unedited = cancel_text["error"][-12:-1]
 
-    urlws = set_urlws()
+        if unedited[2] == " ":
+            account = unedited[3:]
+        elif unedited[1] == " ":
+            account = unedited[2:]
+        elif unedited[0] == " ":
+            account = unedited[1:]
+        else:
+            account = unedited
+        print account
+
+        if account not in all_accounts:
+            all_accounts.append(account)
+            uaccount = account.encode("utf-8")
+            args = [dirpath, uaccount]
+            subprocess.Popen([sys.executable,  args],\
+                             creationflags = subprocess.CREATE_NEW_CONSOLE)
+
+        urlws = set_urlws()
 
 print len(all_accounts)

@@ -12,7 +12,7 @@ stock = SFdata.stock
 venue = SFdata.venue
 instance = SFdata.instance
 
-perp = "RAH5051135"
+perp = "SM33488048"
 
 url = base_url + str(instance) + "/judge"
 
@@ -21,11 +21,10 @@ link = "https://docs.google.com/document/d/1cWRproRq_FwsX6Lmm-s_Xvb9IeNLX_DeJ-vc
 summary = """
 
 To summarize, my three pieces of evidence pointing to account 
-RAH5051135 as the anomaly were:
+SM33488048 as the anomaly were:
 
 1. It had the largest (fractional) discrepancy between average bid quantity 
-     and average ask quantity - 251 to 1,425, respectively. 
-     This is what led me to piece #2. 
+     and average ask quantity. This is what led me to piece #2. 
 2. It was the only account to repeatedly return to the same position after
      selling off a large number of shares. Although I can't be certain, 
      I would bet that it was selling to a position of zero. 
