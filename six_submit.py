@@ -3,13 +3,9 @@ import requests
 import json
 import SFdata
 
-apikey = SFdata.apikey
 auth = SFdata.auth
 base_url = "https://api.stockfighter.io/gm/instances/"
 
-account = SFdata.account
-stock = SFdata.stock
-venue = SFdata.venue
 instance = SFdata.instance
 
 perp = "SM33488048"
