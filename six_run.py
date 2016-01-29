@@ -3,24 +3,24 @@ import web
 import requests
 import json
 from ws4py.client.threadedclient import WebSocketClient
-import SFdata
+import six_data
 import sys
 import subprocess
 
-apikey = SFdata.apikey
-auth = SFdata.auth
-base_url = SFdata.base_url
-base_urlws = SFdata.base_urlws
+apikey = six_data.apikey
+auth = six_data.auth
+base_url = six_data.base_url
+base_urlws = six_data.base_urlws
 
-account = SFdata.account
-stock = SFdata.stock
-venue = SFdata.venue
+account = six_data.account
+stock = six_data.stock
+venue = six_data.venue
 
 all_accounts = []
 
 url = base_url + "/venues/" + venue + "/stocks/" + stock + "/orders"
 
-dirpath = "C:/Users/20596566/mystuff/projects/stockfighter/STOCKS/wssub.py "
+dirpath = "C:/Users/20596566/mystuff/projects/stockfighter/STOCKS/six_sub.py "
 
 class Identification(object):
     def __init__(self):
