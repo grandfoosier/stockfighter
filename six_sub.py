@@ -1,4 +1,3 @@
-import time
 import web
 import requests
 import json
@@ -6,9 +5,6 @@ from ws4py.client.threadedclient import WebSocketClient
 import SFdata
 import sys
 
-apikey = SFdata.apikey
-auth = SFdata.auth
-base_url = SFdata.base_url
 base_urlws = SFdata.base_urlws
 
 account = sys.argv[1]
@@ -18,8 +14,6 @@ venue = SFdata.venue
 path = "C:/users/20596566/mystuff/projects/stockfighter/docs/" + account + ".txt"
 acct_file = open(path, 'w')
 acct_file.write(account + "\n")
-
-url = base_url + "/venues/" + venue + "/stocks/" + stock + "/orders"
 
 def set_urlws():
     urlws = base_urlws + "/ws/" + account + "/venues/" + \
