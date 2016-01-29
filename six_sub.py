@@ -21,28 +21,12 @@ acct_file.write(account + "\n")
 
 url = base_url + "/venues/" + venue + "/stocks/" + stock + "/orders"
 
-class Identification(object):
-    def __init__(self):
-        to_check = 1
-
-id = Identification()
-
 def set_urlws():
     urlws = base_urlws + "/ws/" + account + "/venues/" + \
             venue + "/executions/stocks/" + stock
     return urlws
 
 urlws = set_urlws()
-
-def get_status(id):
-    xget = requests.get(url + "/" + str(id), headers=auth)
-    xstatus = json.loads(xget.content)
-    return xstatus
-
-def cancel_order(id):
-    ccan = requests.post(url + "/" + str(id) + "/cancel", headers=auth)
-    cstatus = json.loads(ccan.content)
-    return cstatus
 
 class Position(object):
     def __init__(self):
