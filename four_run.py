@@ -1,14 +1,15 @@
 import web
 import requests
 import json
+import SFdata
 
-apikey = "#########"
-base_url = "https://api.stockfighter.io/ob/api"
-auth = {"X-Starfighter-Authorization": apikey}
+apikey = SFdata.apikey
+auth = SFdata.auth
+base_url = SFdata.base_url
 
-account = "CES3507501"
-venue = "QUPOEX"   
-stock = "GVOE"  
+account = SFdata.account
+stock = SFdata.stock
+venue = SFdata.venue
 
 url = base_url + "/venues/" + venue + "/stocks/" + stock + "/orders"
 
