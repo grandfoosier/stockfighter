@@ -1,16 +1,16 @@
 import web
 import requests
 import json
-import six_data
+import SFdata
 
-apikey = six_data.apikey
-auth = six_data.auth
+apikey = SFdata.apikey
+auth = SFdata.auth
 base_url = "https://api.stockfighter.io/gm/instances/"
 
-account = six_data.account
-stock = six_data.stock
-venue = six_data.venue
-instance = six_data.instance
+account = SFdata.account
+stock = SFdata.stock
+venue = SFdata.venue
+instance = SFdata.instance
 
 perp = "SM33488048"
 
