@@ -3,18 +3,18 @@ import web
 import requests
 import json
 from ws4py.client.threadedclient import WebSocketClient
-import six_data
+import SFdata
 import sys
 import subprocess
 
-apikey = six_data.apikey
-auth = six_data.auth
-base_url = six_data.base_url
-base_urlws = six_data.base_urlws
+apikey = SFdata.apikey
+auth = SFdata.auth
+base_url = SFdata.base_url
+base_urlws = SFdata.base_urlws
 
-account = six_data.account
-stock = six_data.stock
-venue = six_data.venue
+account = SFdata.account
+stock = SFdata.stock
+venue = SFdata.venue
 
 all_accounts = []
 
