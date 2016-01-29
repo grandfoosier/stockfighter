@@ -7,7 +7,6 @@ import SFdata
 import sys
 import subprocess
 
-apikey = SFdata.apikey
 auth = SFdata.auth
 base_url = SFdata.base_url
 base_urlws = SFdata.base_urlws
