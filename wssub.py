@@ -50,11 +50,6 @@ class Position(object):
         self.cash = 0
 pos = Position()
 
-# class Trend(object):
-    # def __init__(self):
-        # self.data = []
-# trend = Trend()
-
 class DummyClient(WebSocketClient):
     def opened(self):
         print "Websocket opened\n"
@@ -70,9 +65,6 @@ class DummyClient(WebSocketClient):
         price = "%.2f" % rawprice
         rawpricef = int(n["price"]) / 100.0
         pricef = "%.2f" % rawpricef
-        # print "Order:", n["order"]["direction"], n["order"]["originalQty"],\
-              # "at", str(price), ": (" + n["order"]["orderType"] + ")"
-        # print "Filled:", n["filled"], "at", str(pricef)
 
         mult = 1
         if n["order"]["direction"] == "sell": mult = -1
@@ -87,7 +79,7 @@ class DummyClient(WebSocketClient):
 
         timein = n["order"]["ts"][12:]
         timeout = n["filledAt"][12:]
-        
+
         acct_file.write("%s, %s, $%s, %s, %s, $%s, %s\n" % 
                         (n["order"]["direction"], n["order"]["originalQty"], 
                         price, timein, n["filled"], pricef, timeout))
