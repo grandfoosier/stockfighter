@@ -2,7 +2,7 @@ import web
 import requests
 import json
 
-apikey = "70619396e34793da29ef1ae554dde1a76c64a63e"
+apikey = "#########"
 base_url = "https://api.stockfighter.io/ob/api"
 auth = {"X-Starfighter-Authorization": apikey}
 
