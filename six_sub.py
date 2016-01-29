@@ -3,17 +3,17 @@ import web
 import requests
 import json
 from ws4py.client.threadedclient import WebSocketClient
-import SFdata
+import six_data
 import sys
 
-apikey = SFdata.apikey
-auth = SFdata.auth
-base_url = SFdata.base_url
-base_urlws = SFdata.base_urlws
+apikey = six_data.apikey
+auth = six_data.auth
+base_url = six_data.base_url
+base_urlws = six_data.base_urlws
 
 account = sys.argv[1]
-stock = SFdata.stock
-venue = SFdata.venue
+stock = six_data.stock
+venue = six_data.venue
 
 path = "C:/users/20596566/mystuff/projects/stockfighter/docs/" + account + ".txt"
 acct_file = open(path, 'w')
