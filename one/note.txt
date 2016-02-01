@@ -1,0 +1,3 @@
+It seems you can't get the max score with a program - at least I'm not sure how to - 
+there isn't enough time to type in everything. If you use their in-browser API you can 
+type in 100 shares and market type before you start the instance, and then just hit send.
